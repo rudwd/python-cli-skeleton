@@ -65,8 +65,26 @@ def upper_lower_2(name, casing):
     click.echo(message)
 
 
+@click.command()
+@click.option(
+    '--weekday',
+    type=click.Choice([
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+    ])
+)
+def weekday(weekday):  # 'weekday' must match the parameter name namely '--weekday'.
+    click.echo(f'Weekday: {weekday}')
+
+
 if __name__ == '__main__':
     # ls()
     # tail()
     # upper_lower()
-    upper_lower_2()
+    # upper_lower_2()
+    weekday()
