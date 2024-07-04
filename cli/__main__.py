@@ -82,8 +82,11 @@ def weekday(weekday):  # 'weekday' must match the parameter name namely '--weekd
     click.echo(f'Weekday: {weekday}')
 
 
-def cli():
-    print('hello there')
+@click.command()
+@click.option('-u', '--upload', 'file_path', help='Upload a file to the given bucket.')  # option name = --upper & its value if set = 'upper'
+@click.version_option('0.0.1', prog_name='skeleton cli')
+def cli(file_path: str):
+    print(f'TODO: :uploading: {file_path}')
 
 
 if __name__ == '__main__':
